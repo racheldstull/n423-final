@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta name="author" content="Rachel Stull">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, user-scalable=1, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css"
+          integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Open+Sans+Condensed:300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <title>Momentum | Community</title>
+</head>
+<body>
+
+<nav>
+    <div class="nav-left">
+        <div class="nav-logo">
+            <a href="index.html">
+                <img class="big-logo" src="images/logo-min-temp.png" alt="momentum logo">
+                <img class="small-logo" src="images/logo-text-temp.png" alt="momentum logo">
+            </a>
+        </div>
+    </div>
+    <div class="nav-right">
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a class="disabled" href="#">Learn</a>
+            <a href="community.html">Community</a>
+            <a class="disabled" href="#">Events</a>
+            <a class="disabled" href="#">Meetings</a>
+            <a class="disabled" href="#">MyMomentum</a>
+            <a href="#"><i class="fas fa-user-circle"></i></a>
+        </div>
+    </div>
+</nav>
+
+<main>
+    <div class="community-main-wrapper">
+        <div class="community-sub-nav">
+            <div class="sub-nav-top">
+                <h1>Community Discussions</h1>
+            </div>
+            <div class="sub-nav-bottom">
+                <div class="sub-nav-left">
+                    <a href="#"><i class="fas fa-search"></i></a>
+                    <p>&nbsp; | &nbsp;</p>
+                    <input type="text">
+                </div>
+                <div class="sub-nav-middle">
+                    <a href="#">All</a>
+                    <a href="#">Alcoholism</a>
+                    <a href="#">Drug Addiction</a>
+                    <a href="#">Friends and Family</a>
+                </div>
+                <div class="sub-nav-right">
+                    <button>Create Post</button>
+                </div>
+            </div>
+            <hr>
+        </div>
+        <div class="community-content">
+            <div class="topics-list">
+                <div class="topics-legend">
+                    <div class="topics-legend-row">
+                        <div class="legend-item legend-title">Title</div>
+                        <div class="legend-item">Topic</div>
+                        <div class="legend-item">Comments</div>
+                        <div class="legend-item">Latest Activity</div>
+                    </div>
+                </div>
+                <div class="topics-list-items">
+<!--                    <div class="topics-list-row">-->
+<!--                        <a href="#">-->
+<!--                            <div class="topics-details details-title">Lorem ipsum dolor sit amet, consectetur adip... <br>-->
+<!--                                <span class="cite">-->
+<!--                                Posted <span class="italics">3 hours ago</span>, by <span class="italics">JohnDoe2019</span>-->
+<!--                            </span>-->
+<!--                            </div>-->
+<!--                            <div class="topics-details">Alcoholism</div>-->
+<!--                            <div class="topics-details">0 replies</div>-->
+<!--                            <div class="topics-details">3 hours ago</div>-->
+<!--                        </a>-->
+<!--                    </div>-->
+                    <div id="topic-topicDetailsTemplate" class="topics-list-row">
+                        <div class="topics-details details-title">Lorem ipsum dolor sit amet, consectetur adip... <br>
+                            <span class="cite">
+                                Posted <span class="italics">3 hours ago</span>, by <span class="italics">JohnDoe2019</span>
+                            </span>
+                        </div>
+                        <div class="topics-details">Alcoholism</div>
+                        <div class="topics-details">0 replies</div>
+                        <div class="topics-details">3 hours ago</div>
+                    </div>
+                    <div class="topics-list-row">
+                        <div class="topics-details details-title">Lorem ipsum dolor sit amet, consectetur adip... <br>
+                            <span class="cite">
+                                Posted <span class="italics">3 hours ago</span>, by <span class="italics">JohnDoe2019</span>
+                            </span>
+                        </div>
+                        <div class="topics-details">Alcoholism</div>
+                        <div class="topics-details">0 replies</div>
+                        <div class="topics-details">3 hours ago</div>
+                    </div>
+                    <div class="topics-list-row">
+                        <div class="topics-details details-title">Lorem ipsum dolor sit amet, consectetur adip... <br>
+                            <span class="cite">
+                                Posted <span class="italics">3 hours ago</span>, by <span class="italics">JohnDoe2019</span>
+                            </span>
+                        </div>
+                        <div class="topics-details">Alcoholism</div>
+                        <div class="topics-details">0 replies</div>
+                        <div class="topics-details">3 hours ago</div>
+                    </div>
+                    <div class="topics-list-row">
+                        <div class="topics-details details-title">Lorem ipsum dolor sit amet, consectetur adip... <br>
+                            <span class="cite">
+                                Posted <span class="italics">3 hours ago</span>, by <span class="italics">JohnDoe2019</span>
+                            </span>
+                        </div>
+                        <div class="topics-details">Alcoholism</div>
+                        <div class="topics-details">0 replies</div>
+                        <div class="topics-details">3 hours ago</div>
+                    </div>
+                    <div class="topics-list-row">
+                        <div class="topics-details details-title">Lorem ipsum dolor sit amet, consectetur adip... <br>
+                            <span class="cite">
+                                Posted <span class="italics">3 hours ago</span>, by <span class="italics">JohnDoe2019</span>
+                            </span>
+                        </div>
+                        <div class="topics-details">Alcoholism</div>
+                        <div class="topics-details">0 replies</div>
+                        <div class="topics-details">3 hours ago</div>
+                    </div>
+                    <div class="topics-list-row">
+                        <div class="topics-details details-title">Lorem ipsum dolor sit amet, consectetur adip... <br>
+                            <span class="cite">
+                                Posted <span class="italics">3 hours ago</span>, by <span class="italics">JohnDoe2019</span>
+                            </span>
+                        </div>
+                        <div class="topics-details">Alcoholism</div>
+                        <div class="topics-details">0 replies</div>
+                        <div class="topics-details">3 hours ago</div>
+                    </div>
+                    <div class="topics-list-row">
+                        <div class="topics-details details-title">Lorem ipsum dolor sit amet, consectetur adip... <br>
+                            <span class="cite">
+                                Posted <span class="italics">3 hours ago</span>, by <span class="italics">JohnDoe2019</span>
+                            </span>
+                        </div>
+                        <div class="topics-details">Alcoholism</div>
+                        <div class="topics-details">0 replies</div>
+                        <div class="topics-details">3 hours ago</div>
+                    </div>
+                    <div class="topics-list-row">
+                        <div class="topics-details details-title">Lorem ipsum dolor sit amet, consectetur adip... <br>
+                            <span class="cite">
+                                Posted <span class="italics">3 hours ago</span>, by <span class="italics">JohnDoe2019</span>
+                            </span>
+                        </div>
+                        <div class="topics-details">Alcoholism</div>
+                        <div class="topics-details">0 replies</div>
+                        <div class="topics-details">3 hours ago</div>
+                    </div>
+                    <div class="topics-list-row">
+                        <div class="topics-details details-title">Lorem ipsum dolor sit amet, consectetur adip... <br>
+                            <span class="cite">
+                                Posted <span class="italics">3 hours ago</span>, by <span class="italics">JohnDoe2019</span>
+                            </span>
+                        </div>
+                        <div class="topics-details">Alcoholism</div>
+                        <div class="topics-details">0 replies</div>
+                        <div class="topics-details">3 hours ago</div>
+                    </div>
+                    <div class="topics-list-row">
+                        <div class="topics-details details-title">Lorem ipsum dolor sit amet, consectetur adip... <br>
+                            <span class="cite">
+                                Posted <span class="italics">3 hours ago</span>, by <span class="italics">JohnDoe2019</span>
+                            </span>
+                        </div>
+                        <div class="topics-details">Alcoholism</div>
+                        <div class="topics-details">0 replies</div>
+                        <div class="topics-details">3 hours ago</div>
+                    </div>
+                    <div class="topics-list-row">
+                        <div class="topics-details details-title">Lorem ipsum dolor sit amet, consectetur adip... <br>
+                            <span class="cite">
+                                Posted <span class="italics">3 hours ago</span>, by <span class="italics">JohnDoe2019</span>
+                            </span>
+                        </div>
+                        <div class="topics-details">Alcoholism</div>
+                        <div class="topics-details">0 replies</div>
+                        <div class="topics-details">3 hours ago</div>
+                    </div>
+                    <div class="topics-list-row">
+                        <div class="topics-details details-title">Lorem ipsum dolor sit amet, consectetur adip... <br>
+                            <span class="cite">
+                                Posted <span class="italics">3 hours ago</span>, by <span class="italics">JohnDoe2019</span>
+                            </span>
+                        </div>
+                        <div class="topics-details">Alcoholism</div>
+                        <div class="topics-details">0 replies</div>
+                        <div class="topics-details">3 hours ago</div>
+                    </div>
+                    <div class="topics-list-row">
+                        <div class="topics-details details-title">Lorem ipsum dolor sit amet, consectetur adip... <br>
+                            <span class="cite">
+                                Posted <span class="italics">3 hours ago</span>, by <span class="italics">JohnDoe2019</span>
+                            </span>
+                        </div>
+                        <div class="topics-details">Alcoholism</div>
+                        <div class="topics-details">0 replies</div>
+                        <div class="topics-details">3 hours ago</div>
+                    </div>
+                    <div class="topics-list-row">
+                        <div class="topics-details details-title">Lorem ipsum dolor sit amet, consectetur adip... <br>
+                            <span class="cite">
+                                Posted <span class="italics">3 hours ago</span>, by <span class="italics">JohnDoe2019</span>
+                            </span>
+                        </div>
+                        <div class="topics-details">Alcoholism</div>
+                        <div class="topics-details">0 replies</div>
+                        <div class="topics-details">3 hours ago</div>
+                    </div>
+                    <div class="topics-list-row">
+                        <div class="topics-details details-title">Lorem ipsum dolor sit amet, consectetur adip... <br>
+                            <span class="cite">
+                                Posted <span class="italics">3 hours ago</span>, by <span class="italics">JohnDoe2019</span>
+                            </span>
+                        </div>
+                        <div class="topics-details">Alcoholism</div>
+                        <div class="topics-details">0 replies</div>
+                        <div class="topics-details">3 hours ago</div>
+                    </div>
+                    <div class="topics-list-row">
+                        <div class="topics-details details-title">Lorem ipsum dolor sit amet, consectetur adip... <br>
+                            <span class="cite">
+                                Posted <span class="italics">3 hours ago</span>, by <span class="italics">JohnDoe2019</span>
+                            </span>
+                        </div>
+                        <div class="topics-details">Alcoholism</div>
+                        <div class="topics-details">0 replies</div>
+                        <div class="topics-details">3 hours ago</div>
+                    </div>
+                    <div class="topics-list-row">
+                        <div class="topics-details details-title">Lorem ipsum dolor sit amet, consectetur adip... <br>
+                            <span class="cite">
+                                Posted <span class="italics">3 hours ago</span>, by <span class="italics">JohnDoe2019</span>
+                            </span>
+                        </div>
+                        <div class="topics-details">Alcoholism</div>
+                        <div class="topics-details">0 replies</div>
+                        <div class="topics-details">3 hours ago</div>
+                    </div>
+                    <div class="topics-list-row">
+                        <div class="topics-details details-title">Lorem ipsum dolor sit amet, consectetur adip... <br>
+                            <span class="cite">
+                                Posted <span class="italics">3 hours ago</span>, by <span class="italics">JohnDoe2019</span>
+                            </span>
+                        </div>
+                        <div class="topics-details">Alcoholism</div>
+                        <div class="topics-details">0 replies</div>
+                        <div class="topics-details">3 hours ago</div>
+                    </div>
+                    <div class="topics-list-row">
+                        <div class="topics-details details-title">Lorem ipsum dolor sit amet, consectetur adip... <br>
+                            <span class="cite">
+                                Posted <span class="italics">3 hours ago</span>, by <span class="italics">JohnDoe2019</span>
+                            </span>
+                        </div>
+                        <div class="topics-details">Alcoholism</div>
+                        <div class="topics-details">0 replies</div>
+                        <div class="topics-details">3 hours ago</div>
+                    </div>
+                    <div class="topics-list-row">
+                        <div class="topics-details details-title">Lorem ipsum dolor sit amet, consectetur adip... <br>
+                            <span class="cite">
+                                Posted <span class="italics">3 hours ago</span>, by <span class="italics">JohnDoe2019</span>
+                            </span>
+                        </div>
+                        <div class="topics-details">Alcoholism</div>
+                        <div class="topics-details">0 replies</div>
+                        <div class="topics-details">3 hours ago</div>
+                    </div>
+                </div>
+                <div class="topics-pagination">
+                    <button class="currentPage">1</button>
+                    <button>2</button>
+                    <button>3</button>
+                    <button>Next ></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <div class="footer-top">
+        <div class="col">
+            <h1>Stay Connected</h1>
+            <div class="social">
+                <a href="#"><i class="fab fa-facebook-square"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+            <a href="mailto:info@momentum.org">info@momentum.org</a>
+        </div>
+        <div class="col">
+            <h1>Momentum</h1>
+            <a href="#">About Us</a>
+            <a href="#">Our Mission</a>
+            <a href="#">Website Feedback</a>
+        </div>
+        <div class="col">
+            <h1>Navigation</h1>
+            <a href="#">Home</a>
+            <a href="#">Learn</a>
+            <a href="#">Community</a>
+            <a href="#">Events</a>
+            <a href="#">Meetings</a>
+            <a href="#">MyAccount</a>
+            <a href="#">MyMomentum</a>
+            <a href="#">Sitemap</a>
+        </div>
+        <div class="col">
+            <h1>Legal</h1>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Use</a>
+        </div>
+        <div class="col">
+            <h1>Contact</h1>
+            <a href="#">Contact Us</a>
+            <a href="#">Press and Media</a>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <hr>
+        <p>&copy; 2019 Momentum</p>
+    </div>
+</footer>
+
+<script src="lib/jquery-3.4.1.min.js"></script>
+<script src="app/app.js"></script>
+</body>
+</html>

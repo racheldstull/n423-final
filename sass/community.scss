@@ -1,0 +1,201 @@
+.community-main-wrapper {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  .community-sub-nav {
+    margin-top: 150px;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+
+     .sub-nav-top {
+       width: 100%;
+
+       h1 {
+         font-family: 'Open Sans', sans-serif;
+         font-size: 50px;
+         text-align: center;
+        }
+      }
+
+     .sub-nav-bottom {
+       margin-top: 60px;
+       width: 100%;
+       display: flex;
+
+       .sub-nav-left {
+         display: flex;
+         width: 20%;
+         margin-left: 100px;
+         line-height: 18px;
+
+         a {
+           color: $gray;
+           font-family: 'Open Sans', sans-serif;
+           font-size: 20px;
+           padding: 0 5px;
+           text-decoration: none;
+         }
+
+         input[type=text] {
+           height: 20px;
+           width: 150px;
+           padding: 10px 2px;
+           font-size: 20px;
+
+           &:focus {
+
+           }
+         }
+       }
+
+       .sub-nav-middle {
+         width: 60%;
+         text-align: center;
+
+         a {
+           color: $gray;
+           font-family: 'Open Sans', sans-serif;
+           font-size: 20px;
+           margin: 0 20px;
+           padding-bottom: 16px;
+           text-decoration: none;
+           border-bottom: 3px solid rgba(0, 0, 0, 0);
+           z-index: 99;
+           transition: all .2s ease-in-out;
+
+           &:hover {
+             border-bottom: 3px solid $red;
+           }
+         }
+       }
+
+       .sub-nav-right {
+         width: 20%;
+         text-align: right;
+         margin-right: 100px;
+         line-height: 20px;
+
+
+         button {
+           background-color: $red;
+           border: none;
+           color: $white;
+           font-family: 'Open Sans', sans-serif;
+           font-size: 15px;
+           padding: 8px 20px;
+           margin-top: -5px;
+           cursor: pointer;
+         }
+       }
+     }
+
+     hr {
+       margin: 10px 100px;
+       z-index: -99;
+     }
+  }
+
+
+   .community-content {
+     width: 100%;
+     font-family: 'Open Sans', sans-serif;
+
+     .topics-list {
+       width: 100%;
+       display: flex;
+       flex-direction: column;
+       margin-bottom: 40px;
+
+       .topics-legend {
+         margin-top: 40px;
+         display: flex;
+         width: 100%;
+
+         .topics-legend-row {
+           width: 100%;
+           display: flex;
+           margin: 20px 100px;
+           padding-bottom: 10px;
+           padding-left: 10px;
+           border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+
+           .legend-item {
+             text-align: left;
+             width: 20%;
+             color: rgba(0,0,0,0.4);
+           }
+
+           .legend-title {
+             width: 40%;
+           }
+         }
+
+       }
+
+       .topics-list-items {
+         display: flex;
+         flex-direction: column;
+         margin: 0 100px;
+
+         .topics-list-row {
+           display: flex;
+           padding: 20px 0 20px 20px;
+           border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+
+           .topics-details {
+             color: $gray;
+             font-weight: bold;
+             width: 20%;
+
+             .cite {
+               font-weight: normal;
+               color: $gray;
+             }
+
+             .italics {
+               font-style: italic;
+             }
+           }
+
+           .details-title {
+             color: $red;
+             width: 40%;
+           }
+         }
+       }
+
+       .topics-pagination {
+         height: 50px;
+         margin: 20px 0 0 90px;
+
+         button {
+           background-color: rgba(0,0,0,0);
+           border: none;
+           color: $gray;
+           font-family: 'Open Sans', sans-serif;
+           font-size: 15px;
+           padding: 8px 15px;
+           margin: 10px;
+           cursor: pointer;
+           transition: all .2s ease-in-out;
+
+           &:hover {
+             background-color: #d6d6d6;
+           }
+         }
+
+         .currentPage {
+           background-color: $red;
+           color: $white;
+
+           &:hover {
+             background-color: #c33a5a;
+           }
+         }
+       }
+     }
+   }
+}
