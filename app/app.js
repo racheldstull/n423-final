@@ -4,7 +4,7 @@ function redirect(){
 
 
 $("#topic-topicDetailsTemplate").on("click", function(){
-    window.location.href = "topicDetailsTemplate.html";
+    window.location.href = "details.php";
 });
 
 
