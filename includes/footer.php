@@ -44,7 +44,14 @@
     </div>
 </footer>
 
-<script src="lib/jquery-3.4.1.min.js"></script>
-<script src="app/app.js"></script>
+<script src="<?php echo $uri ?>lib/jquery-3.4.1.min.js"></script>
+<script src="<?php echo $uri ?>app/app.js"></script>
+
+<?php
+
+echo '<script> console.log("' .$_SESSION["user_level"]. '");</script>';
+
+?>
+?>
 </body>
 </html>

@@ -1,6 +1,7 @@
 <?php
 
 // create page title value
+$uri = "";
 $page_title = "Home";
 
 // create requires for the header and database

@@ -266,7 +266,8 @@ nav {
           display: -ms-flexbox;
           display: flex;
           padding: 20px 0 20px 20px;
-          border-bottom: 1px solid rgba(0, 0, 0, 0.2); }
+          border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+          cursor: pointer; }
           .community-main-wrapper .community-content .topics-list .topics-list-items .topics-list-row .topics-details {
             color: #333333;
             font-weight: bold;
@@ -515,6 +516,111 @@ nav {
     .meetings-main-wrapper .meetings-sub-nav hr {
       margin: 10px 100px;
       z-index: -99; }
+
+.login-main-wrapper {
+  width: 100%;
+  height: 100vh;
+  background-color: #06D6A0; }
+  .login-main-wrapper .form-content {
+    padding: 5%;
+    width: 30%;
+    height: calc(85% - 70px);
+    background-color: #ffffff;
+    margin: 140px auto; }
+    .login-main-wrapper .form-content #message_body h1 {
+      font-family: 'Open Sans', sans-serif;
+      color: #333333;
+      text-align: center;
+      padding-bottom: 30px; }
+    .login-main-wrapper .form-content #message_body p {
+      font-family: 'Open Sans', sans-serif;
+      color: #333333;
+      text-align: center;
+      padding-bottom: 30px; }
+    .login-main-wrapper .form-content #return_link {
+      text-align: center; }
+      .login-main-wrapper .form-content #return_link a {
+        font-family: 'Open Sans', sans-serif;
+        color: #EF476F;
+        text-decoration: none; }
+    .login-main-wrapper .form-content form {
+      height: 100%;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center; }
+      .login-main-wrapper .form-content form h1 {
+        font-family: 'Open Sans', sans-serif;
+        color: #333333;
+        text-align: center;
+        padding-bottom: 30px; }
+      .login-main-wrapper .form-content form .form-group {
+        background-color: #e9e9e9;
+        padding: 15px;
+        margin-bottom: 10px; }
+        .login-main-wrapper .form-content form .form-group label {
+          font-size: 25px;
+          padding-right: 10px; }
+        .login-main-wrapper .form-content form .form-group input[type=password], .login-main-wrapper .form-content form .form-group input[type=email], .login-main-wrapper .form-content form .form-group input[type=text] {
+          font-size: 20px;
+          border: none;
+          background-color: rgba(0, 0, 0, 0);
+          width: calc(100% - 40px); }
+          .login-main-wrapper .form-content form .form-group input[type=password]:focus, .login-main-wrapper .form-content form .form-group input[type=email]:focus, .login-main-wrapper .form-content form .form-group input[type=text]:focus {
+            outline: none; }
+      .login-main-wrapper .form-content form .notice {
+        color: #EF476F;
+        font-style: italic;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 14px; }
+      .login-main-wrapper .form-content form .role-select {
+        padding: 25px 0 10px 0;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        font-size: 18px;
+        font-family: 'Open Sans', sans-serif; }
+        .login-main-wrapper .form-content form .role-select label {
+          padding-bottom: 2px; }
+          .login-main-wrapper .form-content form .role-select label input {
+            margin-left: 10px; }
+      .login-main-wrapper .form-content form .submit {
+        padding: 25px 0 50px 0; }
+        .login-main-wrapper .form-content form .submit input[type=submit] {
+          width: 100%;
+          background-color: #EF476F;
+          color: #ffffff;
+          border: none;
+          padding: 15px;
+          font-size: 16px;
+          cursor: pointer;
+          -webkit-transition: all .2s ease-in-out;
+          -o-transition: all .2s ease-in-out;
+          transition: all .2s ease-in-out; }
+          .login-main-wrapper .form-content form .submit input[type=submit]:hover {
+            background-color: #de4267; }
+      .login-main-wrapper .form-content form .register {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        color: #6e6e6e;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 14px;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center; }
+        .login-main-wrapper .form-content form .register a {
+          color: #6e6e6e; }
 
 footer {
   height: 450px;
