@@ -4,7 +4,7 @@ if (session_status() == PHP_SESSION_NONE){
     session_start();
 }
 
-if ($_SESSION["user_level"] == ""){
+if (!isset($_SESSION["user_level"])){
     $_SESSION["user_level"] = 0;
 }
 

@@ -13,22 +13,51 @@ function sanitize($item){
 
 $user_name = '';
 $user_email = '';
-$user_pass = '';
+$user_pass = false;
+$pwd_length = false;
 $user_level = 0;
 if(isset($_REQUEST["user_name"])) { $user_name = sanitize($_REQUEST["user_name"]); }
 if(isset($_REQUEST["user_email"])) { $user_email = sanitize($_REQUEST["user_email"]); }
-if(isset($_REQUEST["user_pass"])) { $user_pass = sanitize($_REQUEST["user_pass"]); }
 if(isset($_REQUEST["user_level"])) { $user_level = sanitize($_REQUEST["user_level"]); }
 
-$sql = "INSERT INTO `users` (`user_id`, `user_name`, `user_email`, `user_pass`, `user_level`) 
+//handle the password
+//1. don't sanitize the password -- encryption removes the need
+if(isset($_REQUEST["user_pass"])){ $user_pass = $_REQUEST["user_pass"]; }
+//2. check the length -- we want at least 8 characters
+
+if(strlen($user_pass) > 7){$pwd_length = true; }
+//3.encrypt the password -- no need to sanitize it if encryption is used
+if($pwd_length){
+    //sha1 encryption:
+    //$password = sha1($password);
+    //php's password_hash method: (note password_hash returns false if the encryption fails)
+    $user_pass = password_hash($user_pass, PASSWORD_DEFAULT);
+}else{
+    $user_pass = false;
+}
+//FIX BUG MULTIPLE RECORD BUG HERE!!!!!!
+$new_account = false;
+if($user_pass){
+    //this block can only run if we have an 8 char password
+    //and password hash did not return false
+    $sql = "SELECT * FROM users
+			WHERE user_email = '".$user_email."'";
+    $result = mysqli_query($link, $sql);
+    if (mysqli_num_rows($result) < 1){$new_account = true;}
+} //if $password
+
+$success=false;
+if(($user_pass)&&($new_account)){
+    $sql = "INSERT INTO `users` (`user_id`, `user_name`, `user_email`, `user_pass`, `user_level`) 
 		VALUES (NULL, '".$user_name."', '".$user_email."', '".$user_pass."', '".$user_level."')";
 
-$result = mysqli_query($link, $sql);
+    $result = mysqli_query($link, $sql);
 
-if (mysqli_affected_rows($link) == 1){
-    $success = true;
-}else{
-    $success = false;
+    if (mysqli_affected_rows($link) == 1){
+        $success = true;
+    }else{
+        $success = false;
+    }
 }
 
 if ($success){

@@ -52,6 +52,5 @@
 echo '<script> console.log("' .$_SESSION["user_level"]. '");</script>';
 
 ?>
-?>
 </body>
 </html>
