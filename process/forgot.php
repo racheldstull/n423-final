@@ -35,7 +35,7 @@ if (mysqli_num_rows($result) == 1){
     //compose and send an e-mail to the user
     //*note* this MUST be done from a server that can send email
     if(mysqli_affected_rows($link) == 1){
-        $reset_link = "https://in-info-web4.informatics.iupui.edu/~rdstull/momentum/reset_password.php?token=".$token;
+        $reset_link = "https://in-info-web4.informatics.iupui.edu/~rdstull/momentum/reset.php?token=".$token;
         $to = $_REQUEST["user_email"];
         $subject = 'Password Reset Request';
         $message = '

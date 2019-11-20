@@ -13,7 +13,7 @@ require_once ('includes/head.php');
 <main>
     <div class="login-main-wrapper">
         <div class="form-content">
-            <form id="login_form" class="form-horizontal" method="post" action="process/reset.php">
+            <form id="login_form" class="form-horizontal" method="post" action="process/forgot.php">
                 <h1>Reset Password</h1>
                 <div class="form-group">
                     <label for="email" class="label-container"><i class="fas fa-envelope"></i></label>
