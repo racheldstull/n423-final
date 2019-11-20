@@ -11,40 +11,30 @@ function sanitize($item){
     return $item;
 }
 
-$email = '';
-$password = '';
-if(isset($_REQUEST["email"])) { $email = sanitize($_REQUEST["email"]); }
-if(isset($_REQUEST["password"])) { $password = $_REQUEST["password"]; }
+$user_email = '';
+$user_pass = '';
+if(isset($_REQUEST["user_email"])) { $user_email = sanitize($_REQUEST["user_email"]); }
+if(isset($_REQUEST["user_pass"])) { $user_pass = $_REQUEST["user_pass"]; }
 
 $user_id = 0; //this will be the id from the user table record
 $role = 0; //this will be the role value from the user table record
 
-$query = "SELECT user_id, user_name, user_level from users
-		  WHERE user_email = '".$email."'
-		  AND user_pass = '".$password."'";
+$query = "SELECT * from users 
+          WHERE user_email = '.$user_email.'";
 $result = mysqli_query($link, $query);
 
+$row = mysqli_num_rows($result);
+printf("Number of row in the table : " . $row);
 
-
-//$success = false;
-//if (mysqli_num_rows($result) == 1){
-//    echo '<p>not broken here</p>';
-//    $row = mysqli_fetch_array($result, MYSQLI_BOTH);
-//    $pwd_hash = $row["user_pass"];
-//    if(password_verify($password, $pwd_hash)){
-//        $success = true;
-//    } else {
-//        $success = false;
-//    }
-//}
-
-
+$existing_account = false;
+$success = false;
 if (mysqli_num_rows($result) == 1){
-    $success = true;
     $row = mysqli_fetch_array($result, MYSQLI_BOTH);
     $pwd_hash = $row["user_pass"];
-    echo '<p>not broken here</p>';
-}else{
+    $success = password_verify($user_pass, $pwd_hash);
+    $success = true;
+    $existing_account = true;
+} else {
     $success = false;
 }
 
@@ -69,7 +59,7 @@ include("../includes/head.php");
         <div class="form-content">
 
     <?php
-    if($user_id){
+    if($success){
         echo '
 				<div id="message_body">
                 	<h1>Welcome, '.$user_name.'!</h1>
@@ -78,13 +68,30 @@ include("../includes/head.php");
                 <div id="return_link">
                     <a href="../logout.php">Log Out</a> 
                 </div>  <!-- "return_link"-->';
-    }else{
+    }else if(!$existing_account) {
         echo '
 				<div id="message_body">
-                	<p>Email or password does not match our records.</p>
+                	<p>Email does not match our records.</p>
 				</div> <!-- /message body -->
                 <div id="return_link">
-                    <a href="../login.php">Try Again</a> 
+                    <a href="../register.php">Create an account</a> <br>
+                    <a href="../login.php">or try again.</a> 
+                </div>  <!-- "return_link"-->';
+    } else if(!$success) {
+        echo '
+				<div id="message_body">
+                	<p>Password does not match our records.</p>
+				</div> <!-- /message body -->
+                <div id="return_link">
+                    <a href="../login.php">Try again.</a> 
+                </div>  <!-- "return_link"-->';
+    } else {
+        echo '
+				<div id="message_body">
+                	<p>There was an error on our end. Please try again.</p>
+				</div> <!-- /message body -->
+                <div id="return_link">
+                    <a href="../login.php">Try again.</a> 
                 </div>  <!-- "return_link"-->';
     }
 

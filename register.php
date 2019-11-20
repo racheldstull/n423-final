@@ -2,7 +2,7 @@
 
 // create page title value
 $uri = "";
-$page_title = "Home";
+$page_title = "Register";
 
 // create requires for the header and database
 require_once ('includes/connect.php');
@@ -44,7 +44,7 @@ require_once ('includes/head.php');
 
                 <div class="register">
                     <p>Already have an account? &nbsp;</p>
-                    <a href="register.php">Sign in!</a>
+                    <a href="login.php">Sign in!</a>
                 </div>
             </form>
         </div>

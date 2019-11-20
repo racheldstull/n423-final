@@ -115,10 +115,11 @@
 
       .register {
         display: flex;
+        flex-direction: column;
         color: #6e6e6e;
         font-family: 'Open Sans', sans-serif;
         font-size: 14px;
-        justify-content: center;
+        text-align: center;
 
         a {
           color: #6e6e6e;

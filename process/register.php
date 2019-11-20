@@ -79,20 +79,37 @@ include("../includes/head.php");
         <div class="form-content">
 
             <?php
-            if($user_id){
+            if($success){
                 echo '
 				<div id="message_body">
                 	<h1>Welcome, '.$user_name.'! Thank you for registering!</h1>
                     <p>You are now logged in.</p>
 				</div> <!-- /message body -->
                 <div id="return_link">
-                    <a href="../logout.php">Log Out</a> 
+                    <a href="../logout.php">Log Out</a><br>
                     <a href="../index.php">Return Home</a> 
                 </div>  <!-- "return_link"-->';
-            }else{
+            } else if(!$pwd_length){
                 echo '
 				<div id="message_body">
-                	<p>There was an issue creating you\'re account</p>
+                	<p>The password must be at least 8 characters long.</p>
+				</div> <!-- /message body -->
+                <div id="return_link">
+                    <a href="../register.php">Return to Registration Form</a> 
+                </div>  <!-- "return_link"-->';
+            } else if(!$new_account){
+                    echo '
+                    <div id="message_body">
+                        <p>An account with this name already exists. Either login or provide another email address.</p>
+                    </div> <!-- /message body -->
+                    <div id="return_link">
+                        <a href="../register.php">Return to Registration Form</a><br>
+                        <a href="../login.php">Login</a>
+                    </div>  <!-- "return_link"-->';
+            } else {
+                echo '
+				<div id="message_body">
+                	<p>There was an issue creating your account.</p>
 				</div> <!-- /message body -->
                 <div id="return_link">
                     <a href="../register.php">Return to Registration Form</a> 

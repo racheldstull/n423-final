@@ -2,7 +2,7 @@
 
 // create page title value
 $uri = "";
-$page_title = "Login";
+$page_title = "Home";
 
 // create requires for the header and database
 require_once ('includes/connect.php');
@@ -13,16 +13,11 @@ require_once ('includes/head.php');
 <main>
     <div class="login-main-wrapper">
         <div class="form-content">
-            <form id="login_form" class="form-horizontal" method="post" action="process/login.php">
-                <h1>Sign In</h1>
+            <form id="login_form" class="form-horizontal" method="post" action="process/reset.php">
+                <h1>Reset Password</h1>
                 <div class="form-group">
                     <label for="email" class="label-container"><i class="fas fa-envelope"></i></label>
                     <input type="email" class="form-control" name="email" id="email" placeholder="Email" required/ >
-                </div>
-
-                <div class="form-group">
-                    <label for="password" class="label-container"><i class="fas fa-key"></i></label>
-                    <input type="password" class="form-control" name="password" id="password" placeholder="Password" required/ >
                 </div>
 
                 <div class="submit">
@@ -30,8 +25,7 @@ require_once ('includes/head.php');
                 </div>
 
                 <div class="register">
-                    <p>Not a member?&nbsp;<a href="register.php">Sign up now!</a></p>
-                    <p>Forgot password?&nbsp;<a href="forgot.php">Reset password.</a></p>
+                    <p>Remember?&nbsp;<a href="login.php">Sign in.</a></p>
                 </div>
             </form>
         </div>

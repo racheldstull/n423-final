@@ -6,7 +6,7 @@ session_destroy();//kill the session
 
 // create page title value
 $uri = "";
-$page_title = "Home";
+$page_title = "Logout";
 
 // create requires for the header and database
 require_once ('includes/connect.php');
