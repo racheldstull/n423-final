@@ -289,7 +289,7 @@ nav {
               width: 40%; }
       .community-main-wrapper .community-content .topics-list .topics-pagination {
         height: 50px;
-        margin: 20px 0 0 90px; }
+        margin: 70px 0 0 90px; }
         .community-main-wrapper .community-content .topics-list .topics-pagination button {
           background-color: rgba(0, 0, 0, 0);
           border: none;
@@ -312,7 +312,7 @@ nav {
 
 .topic-details-main-wrapper {
   min-height: 100vh;
-  width: 100%;
+  width: 100vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -320,6 +320,8 @@ nav {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column; }
+  .topic-details-main-wrapper .err {
+    margin-left: 200px; }
   .topic-details-main-wrapper .topic-details-sub-nav {
     margin-top: 150px;
     display: -webkit-box;
@@ -366,7 +368,95 @@ nav {
           font-size: 14px; }
     .topic-details-main-wrapper .topic-details-sub-nav hr {
       margin: 10px 200px;
-      z-index: -99; }
+      z-index: -99;
+      opacity: 40%; }
+  .topic-details-main-wrapper .topic-details-body {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100vw;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    margin-top: 40px; }
+    .topic-details-main-wrapper .topic-details-body .details-expanded {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      margin: 0 200px 0 300px;
+      font-family: 'Open Sans', sans-serif; }
+      .topic-details-main-wrapper .topic-details-body .details-expanded .user-info {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex; }
+        .topic-details-main-wrapper .topic-details-body .details-expanded .user-info h4 {
+          font-weight: normal;
+          font-size: 14px;
+          line-height: 28px; }
+        .topic-details-main-wrapper .topic-details-body .details-expanded .user-info h3 {
+          font-size: 18px;
+          margin-right: 20px; }
+      .topic-details-main-wrapper .topic-details-body .details-expanded topic-text p {
+        font-size: 18px; }
+  .topic-details-main-wrapper .details-reply {
+    width: 100vw;
+    margin-top: 40px; }
+    .topic-details-main-wrapper .details-reply form {
+      width: 100%;
+      margin: 0 200px 0 300px; }
+      .topic-details-main-wrapper .details-reply form textarea {
+        font-size: 16px;
+        font-family: 'Open Sans', sans-serif;
+        border-bottom: 4px solid #6e6e6e;
+        background: rgba(177, 177, 177, 0.16);
+        font-style: italic;
+        -webkit-transition: all .2s ease-in-out;
+        -o-transition: all .2s ease-in-out;
+        transition: all .2s ease-in-out; }
+        .topic-details-main-wrapper .details-reply form textarea:focus {
+          border-bottom: 4px solid #EF476F;
+          font-style: normal;
+          outline: none; }
+      .topic-details-main-wrapper .details-reply form input[type=submit] {
+        margin-top: 10px;
+        background-color: #EF476F;
+        border: none;
+        color: #ffffff;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 16px;
+        padding: 10px 30px;
+        cursor: pointer;
+        -webkit-transition: all .2s ease-in-out;
+        -o-transition: all .2s ease-in-out;
+        transition: all .2s ease-in-out; }
+        .topic-details-main-wrapper .details-reply form input[type=submit]:hover {
+          background-color: #de4267; }
+  .topic-details-main-wrapper .details-comments {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px; }
+    .topic-details-main-wrapper .details-comments .sec-begin {
+      margin: 100px 200px 40px 200px; }
+      .topic-details-main-wrapper .details-comments .sec-begin hr {
+        opacity: 40%; }
+    .topic-details-main-wrapper .details-comments .comments .comment {
+      margin: 40px 200px; }
+      .topic-details-main-wrapper .details-comments .comments .comment .comment-top {
+        margin-left: 80px; }
+        .topic-details-main-wrapper .details-comments .comments .comment .comment-top h4 {
+          font-size: 16px;
+          font-weight: normal;
+          margin-top: -15px; }
+        .topic-details-main-wrapper .details-comments .comments .comment .comment-top h3 {
+          font-size: 16px;
+          margin-right: 20px; }
+      .topic-details-main-wrapper .details-comments .comments .comment hr {
+        margin-top: 40px;
+        opacity: 40%; }
 
 .events-main-wrapper {
   min-height: 100vh;

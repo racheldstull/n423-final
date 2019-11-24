@@ -23,7 +23,9 @@ $sql = "SELECT
             cat_name,
             cat_description
         FROM
-            categories";
+            categories
+        WHERE
+            cat_id = " . addslashes($_GET['id']);
 
 $result = mysqli_query($link, $sql);
 
@@ -101,10 +103,12 @@ $result = mysqli_query($link, $sql);
                                         categories
                                     ON  
                                         categories.cat_id = topics.topic_cat
+                                    WHERE
+                                        topic_cat = " . addslashes($_GET['id']) . "
                                     ORDER BY
                                         topics.topic_date DESC";
 
-                                    $result = mysqli_query($link, $sql);
+                            $result = mysqli_query($link, $sql);
 
                             if(!$result)
                             {
@@ -122,6 +126,7 @@ $result = mysqli_query($link, $sql);
 
                                         $pub = strtotime($row['topic_date']);
                                         $pub = date('d M, Y', $pub);
+
                                         echo '
                                             <div class="topics-list-row">
                                             <a href=details.php?id='. $row["topic_id"] .'>
