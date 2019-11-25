@@ -1,6 +1,6 @@
 <?php
 
-// create page title value
+// create page title value and set uri
 $uri = "";
 $page_title = "Community";
 
@@ -8,16 +8,7 @@ $page_title = "Community";
 require_once ('includes/connect.php');
 require_once ('includes/head.php');
 
-function sanitize($item){
-    global $link;  //to use $link within the scope of this function, you must use the keyword "global"
-    $item = html_entity_decode($item);
-    $item = trim($item);
-    $item = stripslashes($item);
-    $item = strip_tags($item);
-    $item = mysqli_real_escape_string( $link, $item );
-    return $item;
-}
-
+// query category id, name, and description from db
 $sql = "SELECT
             cat_id,
             cat_name,
@@ -25,10 +16,11 @@ $sql = "SELECT
         FROM
             categories";
 
+// retrieve results
 $result = mysqli_query($link, $sql);
 
+// draw page
 ?>
-
 <main>
     <div class="community-main-wrapper">
         <div class="community-sub-nav">
@@ -48,7 +40,7 @@ $result = mysqli_query($link, $sql);
                     <a href="community_category.php?id=3">Friends and Family</a>
                 </div>
                 <div class="sub-nav-right">
-                    <button>Create Post</button>
+                    <a href="create_topic.php">Create Post</a>
                 </div>
             </div>
             <hr>
@@ -66,21 +58,22 @@ $result = mysqli_query($link, $sql);
                 <div class="topics-list-items">
                     <?php
 
-
-
+                    // if there is an issue with db query
                     if(!$result)
                     {
                         echo 'The category could not be displayed, please try again later.';
                     }
                     else
                     {
+                        // if category does not exist
                         if(mysqli_num_rows($result) == 0)
                         {
                             echo 'This category does not exist.';
                         }
                         else
                         {
-                            //do a query for the topics
+                            // if category exists:
+                            // do a query for the topics
                             $sql = "SELECT  
                                         topic_id,
                                         topic_subject,
@@ -104,24 +97,32 @@ $result = mysqli_query($link, $sql);
                                     ORDER BY
                                         topics.topic_date DESC";
 
+                                    // retrieve results
                                     $result = mysqli_query($link, $sql);
 
+                            // if there is an issue with the db query
                             if(!$result)
                             {
                                 echo 'The topics could not be displayed, please try again later.';
                             }
                             else
                             {
+                                // if there are no topics within the chosen category
                                 if(mysqli_num_rows($result) == 0)
                                 {
                                     echo 'There are no topics in this category yet.';
                                 }
                                 else
                                 {
+                                    // if there are topics in the chosen category
+                                    // loop through table rows
                                     while(($row = mysqli_fetch_array($result, MYSQLI_BOTH)) !== NULL){
 
+                                        // made 'topic_date' a string to manipulate and format the desired way
                                         $pub = strtotime($row['topic_date']);
                                         $pub = date('d M, Y', $pub);
+
+                                        // echo results to page
                                         echo '
                                             <div class="topics-list-row">
                                             <a href=details.php?id='. $row["topic_id"] .'>
@@ -132,7 +133,7 @@ $result = mysqli_query($link, $sql);
                                                 </div>
                                                 <div class="topics-details">'. $row["cat_name"] .'</div>
                                                 <div class="topics-details">0 replies</div>
-                                                <div class="topics-details">3 hours ago</div>
+                                                <div class="topics-details">No Activity Yet</div>
                                             </a>
                                         </div>';
                                     }

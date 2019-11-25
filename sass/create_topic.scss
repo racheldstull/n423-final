@@ -1,40 +1,15 @@
-.login-main-wrapper  {
+.create-topic-main-wrapper {
   width: 100%;
   height: 100vh;
   background-color: $green;
 
   .form-content {
     padding: 5%;
-    width: 30%;
+    width: 50%;
     height: calc(85% - 70px);
     background-color: $white;
     margin: 140px auto;
-
-    #message_body {
-      h1 {
-        font-family: 'Open Sans', sans-serif;
-        color: $gray;
-        text-align: center;
-        padding-bottom: 30px;
-      }
-
-      p {
-        font-family: 'Open Sans', sans-serif;
-        color: $gray;
-        text-align: center;
-        padding-bottom: 30px;
-      }
-    }
-
-    #return_link {
-      text-align: center;
-
-      a {
-        font-family: 'Open Sans', sans-serif;
-        color: $red;
-        text-decoration: none;
-      }
-    }
+    overflow: hidden;
 
     form {
       height: 100%;
@@ -50,16 +25,27 @@
       }
 
       .form-group {
-        background-color: #e9e9e9;
         padding: 15px;
         margin-bottom: 10px;
 
-        label {
-          font-size: 25px;
-          padding-right: 10px;
+        textarea {
+          width: 100%;
+          font-size: 16px;
+          font-family: 'Open Sans', sans-serif;
+          border: none;
+          border-bottom: 4px solid #6e6e6e;
+          font-style: italic;
+          resize: none;
+          transition: all .2s ease-in-out;
+
+          &:focus {
+            border-bottom: 4px solid $red;
+            font-style: normal;
+            outline: none;
+          }
         }
 
-        input[type=password], input[type=email], input[type=text] {
+        input[type=text] {
           font-size: 20px;
           border: none;
           background-color: rgba(0,0,0,0);
@@ -71,14 +57,7 @@
         }
       }
 
-      .notice {
-        color: $red;
-        font-style: italic;
-        font-family: 'Open Sans', sans-serif;
-        font-size: 14px;
-      }
-
-      .role-select {
+      .cat-select {
         padding: 25px 0 10px 0;
         display: flex;
         flex-direction: column;
@@ -98,12 +77,13 @@
         padding: 25px 0 50px 0;
 
         input[type=submit]{
-          width: 100%;
+          margin-top: 10px;
           background-color: $red;
-          color: $white;
           border: none;
-          padding: 15px;
+          color: $white;
+          font-family: 'Open Sans', sans-serif;
           font-size: 16px;
+          padding: 10px 30px;
           cursor: pointer;
           transition: all .2s ease-in-out;
 
@@ -111,18 +91,22 @@
             background-color: $red-hover;
           }
         }
-      }
 
-      .register {
-        display: flex;
-        flex-direction: column;
-        color: #6e6e6e;
-        font-family: 'Open Sans', sans-serif;
-        font-size: 14px;
-        text-align: center;
+        a {
+          margin-top: 10px;
+          text-decoration: none;
+          background-color: $light-gray;
+          border: none;
+          color: $white;
+          font-family: 'Open Sans', sans-serif;
+          font-size: 16px;
+          padding: 10px 30px;
+          cursor: pointer;
+          transition: all .2s ease-in-out;
 
-        p a {
-          color: #6e6e6e;
+          &:hover {
+            background-color: $gray;
+          }
         }
       }
     }

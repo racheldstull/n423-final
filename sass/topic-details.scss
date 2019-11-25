@@ -172,10 +172,6 @@
           }
         }
 
-        .comment-body {
-
-        }
-
         hr {
           margin-top: 40px;
           opacity: 40%;
@@ -183,4 +179,20 @@
       }
     }
   }
+}
+
+.topic-details-reply-main-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.topic-create-main-wrapper {
+  width: 100%;
+  height: 100%;
+  margin-top: 20%;
+  text-align: center;
+  display: flex;
 }

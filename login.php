@@ -16,13 +16,13 @@ require_once ('includes/head.php');
             <form id="login_form" class="form-horizontal" method="post" action="process/login.php">
                 <h1>Sign In</h1>
                 <div class="form-group">
-                    <label for="email" class="label-container"><i class="fas fa-envelope"></i></label>
-                    <input type="email" class="form-control" name="email" id="email" placeholder="Email" required/ >
+                    <label for="user_email" class="label-container"><i class="fas fa-envelope"></i></label>
+                    <input type="email" class="form-control" name="user_email" id="user_email" placeholder="Email" required/ >
                 </div>
 
                 <div class="form-group">
-                    <label for="password" class="label-container"><i class="fas fa-key"></i></label>
-                    <input type="password" class="form-control" name="password" id="password" placeholder="Password" required/ >
+                    <label for="user_pass" class="label-container"><i class="fas fa-key"></i></label>
+                    <input type="password" class="form-control" name="user_pass" id="user_pass" placeholder="Password" required/ >
                 </div>
 
                 <div class="submit">

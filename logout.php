@@ -18,7 +18,7 @@ require_once ('includes/head.php')
     <div class="login-main-wrapper">
         <div class="form-content">
             <div id="message_body">
-                <p>You are now logged out.</p>
+                <h1>You are now logged out.</h1>
                 <p>Have a nice day!</p>
             </div> <!-- /message body -->
             <div id="return_link">

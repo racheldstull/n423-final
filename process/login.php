@@ -19,12 +19,9 @@ if(isset($_REQUEST["user_pass"])) { $user_pass = $_REQUEST["user_pass"]; }
 $user_id = 0; //this will be the id from the user table record
 $role = 0; //this will be the role value from the user table record
 
-$query = "SELECT * from users 
-          WHERE user_email = '.$user_email.'";
-$result = mysqli_query($link, $query);
-
-$row = mysqli_num_rows($result);
-printf("Number of row in the table : " . $row);
+$sql = "SELECT * FROM users
+			WHERE user_email = '".$user_email."'";
+$result = mysqli_query($link, $sql);
 
 $existing_account = false;
 $success = false;
@@ -32,7 +29,6 @@ if (mysqli_num_rows($result) == 1){
     $row = mysqli_fetch_array($result, MYSQLI_BOTH);
     $pwd_hash = $row["user_pass"];
     $success = password_verify($user_pass, $pwd_hash);
-    $success = true;
     $existing_account = true;
 } else {
     $success = false;

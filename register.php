@@ -43,8 +43,7 @@ require_once ('includes/head.php');
                 </div>
 
                 <div class="register">
-                    <p>Already have an account? &nbsp;</p>
-                    <a href="login.php">Sign in!</a>
+                    <p>Already have an account? <a href="login.php">Sign in!</a></p>
                 </div>
             </form>
         </div>

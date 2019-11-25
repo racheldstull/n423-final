@@ -82,7 +82,7 @@ include("../includes/head.php");
             if($success){
                 echo '
 				<div id="message_body">
-                	<h1>Welcome, '.$user_name.'! Thank you for registering!</h1>
+                	<h1>Welcome, '.$user_name.'! <br> Thank you for registering!</h1>
                     <p>You are now logged in.</p>
 				</div> <!-- /message body -->
                 <div id="return_link">

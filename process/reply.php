@@ -1,6 +1,6 @@
 <?php
 
-$uri = "..";
+$uri = "../";
 $page_title = "Details";
 
 require_once ('../includes/connect.php');
@@ -15,32 +15,46 @@ function sanitize($item){
     $item = mysqli_real_escape_string( $link, $item );
     return $item;
 }
+$comment_by = $_SESSION['user_id'];
+$reply = '';
+if(isset($_REQUEST["reply-body"])) { $reply = sanitize($_REQUEST["reply-body"]); }
+if(isset($_REQUEST["topic_com_id"])) { $comment_topic = sanitize($_REQUEST["topic_com_id"]); }
 
-if(!$_SESSION['user_id'])
+if(!$_SESSION['user_id'] == 0)
 {
-    echo 'You must be signed in to post a reply.';
+    echo '
+        <main>
+            <div class="topic-details-reply-main-wrapper">
+                You must be signed in to post a reply.
+            </div>
+        </main>';
 }
 else
 {
     //a real user posted a real reply
-    $sql = "INSERT INTO 
-                    comments(comment_content,
-                          comment_date,
-                          comment_topic,
-                          comment_by) 
-                VALUES ('" . $_POST['reply-content'] . "',
-                        NOW(),
-                        " . addslashes($_GET['id']) . ",
-                        " . $_SESSION['user_id'] . ")";
+    $sql = "INSERT INTO `comments` (`comment_id`, `comment_content`, `comment_topic`, `comment_by`) 
+		VALUES (NULL, '".$reply."', '".$comment_topic."', '".$comment_by."')";
 
     $result = mysqli_query($link, $sql);
 
     if(!$result)
     {
-        echo 'Your reply has not been saved, please try again later.';
+        echo '
+        <main>
+            <div class="topic-details-reply-main-wrapper">
+                Your reply has not been saved, please try again later.
+            </div>
+        </main>';
     }
     else
     {
-        echo 'Your reply has been saved, check out <a href="../details.php?id=' . htmlentities($_GET['id']) . '">the topic</a>.';
+        echo '
+        <main>
+            <div class="topic-details-reply-main-wrapper">
+                Your reply has been saved, check out <a href="../details.php?id='. $comment_topic .'">the topic</a>
+            </div>
+        </main>';
+        
+        header('Location: ' . $_SERVER['HTTP_REFERER']);
     }
 }

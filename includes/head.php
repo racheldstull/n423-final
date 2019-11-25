@@ -8,6 +8,10 @@ if (!isset($_SESSION["user_level"])){
     $_SESSION["user_level"] = 0;
 }
 
+$user_level = $_SESSION["user_level"];
+
+echo '<script>console.log('. $user_level .');</script>';
+
 ?>
 
 <!DOCTYPE html>

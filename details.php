@@ -111,10 +111,11 @@ $result = mysqli_query($link, $sql);
                                         </div>
                                     </div>
                                     <div class="details-reply">
-                                        <form action="process/reply.php"> 
-                                            <textarea name="reply-body" id="reply-body" cols="80" rows="5" placeholder="Write your reply here..."></textarea>
+                                        <form method="get" action="process/reply.php"> 
+                                            <textarea name="reply-body" id="reply-body" cols="80" rows="5" placeholder="Write your reply here..." required></textarea>
                                             <br>
-                                            <input type="submit">
+                                            <input type="hidden" name="topic_com_id" value="'. $row["topic_id"] .'">
+                                            <input type="submit" value="Reply">
                                         </form>
                                     </div>
                                     <div class="details-comments">
@@ -175,7 +176,7 @@ $result = mysqli_query($link, $sql);
                         while(($row = mysqli_fetch_array($result, MYSQLI_BOTH)) !== NULL) {
 
                             $pub = strtotime($row['comment_date']);
-                            $pub = date('d M, Y | h:i:s A', $pub);
+                            $pub = date('d M, Y | h:i A', $pub);
                             echo ' 
                                         <div class="comments">
                                             <div class="comment">

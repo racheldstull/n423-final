@@ -206,9 +206,10 @@ nav {
         text-align: right;
         margin-right: 100px;
         line-height: 20px; }
-        .community-main-wrapper .community-sub-nav .sub-nav-bottom .sub-nav-right button {
+        .community-main-wrapper .community-sub-nav .sub-nav-bottom .sub-nav-right a {
           background-color: #EF476F;
           border: none;
+          text-decoration: none;
           color: #ffffff;
           font-family: 'Open Sans', sans-serif;
           font-size: 15px;
@@ -457,6 +458,27 @@ nav {
       .topic-details-main-wrapper .details-comments .comments .comment hr {
         margin-top: 40px;
         opacity: 40%; }
+
+.topic-details-reply-main-wrapper {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center; }
+
+.topic-create-main-wrapper {
+  width: 100%;
+  height: 100%;
+  margin-top: 20%;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
 
 .events-main-wrapper {
   min-height: 100vh;
@@ -718,8 +740,108 @@ nav {
         font-family: 'Open Sans', sans-serif;
         font-size: 14px;
         text-align: center; }
-        .login-main-wrapper .form-content form .register a {
+        .login-main-wrapper .form-content form .register p a {
           color: #6e6e6e; }
+
+.create-topic-main-wrapper {
+  width: 100%;
+  height: 100vh;
+  background-color: #06D6A0; }
+  .create-topic-main-wrapper .form-content {
+    padding: 5%;
+    width: 50%;
+    height: calc(85% - 70px);
+    background-color: #ffffff;
+    margin: 140px auto;
+    overflow: hidden; }
+    .create-topic-main-wrapper .form-content form {
+      height: 100%;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center; }
+      .create-topic-main-wrapper .form-content form h1 {
+        font-family: 'Open Sans', sans-serif;
+        color: #333333;
+        text-align: center;
+        padding-bottom: 30px; }
+      .create-topic-main-wrapper .form-content form .form-group {
+        padding: 15px;
+        margin-bottom: 10px; }
+        .create-topic-main-wrapper .form-content form .form-group textarea {
+          width: 100%;
+          font-size: 16px;
+          font-family: 'Open Sans', sans-serif;
+          border: none;
+          border-bottom: 4px solid #6e6e6e;
+          font-style: italic;
+          resize: none;
+          -webkit-transition: all .2s ease-in-out;
+          -o-transition: all .2s ease-in-out;
+          transition: all .2s ease-in-out; }
+          .create-topic-main-wrapper .form-content form .form-group textarea:focus {
+            border-bottom: 4px solid #EF476F;
+            font-style: normal;
+            outline: none; }
+        .create-topic-main-wrapper .form-content form .form-group input[type=text] {
+          font-size: 20px;
+          border: none;
+          background-color: rgba(0, 0, 0, 0);
+          width: calc(100% - 40px); }
+          .create-topic-main-wrapper .form-content form .form-group input[type=text]:focus {
+            outline: none; }
+      .create-topic-main-wrapper .form-content form .cat-select {
+        padding: 25px 0 10px 0;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        font-size: 18px;
+        font-family: 'Open Sans', sans-serif; }
+        .create-topic-main-wrapper .form-content form .cat-select label {
+          padding-bottom: 2px; }
+          .create-topic-main-wrapper .form-content form .cat-select label input {
+            margin-left: 10px; }
+      .create-topic-main-wrapper .form-content form .submit {
+        padding: 25px 0 50px 0; }
+        .create-topic-main-wrapper .form-content form .submit input[type=submit] {
+          margin-top: 10px;
+          background-color: #EF476F;
+          border: none;
+          color: #ffffff;
+          font-family: 'Open Sans', sans-serif;
+          font-size: 16px;
+          padding: 10px 30px;
+          cursor: pointer;
+          -webkit-transition: all .2s ease-in-out;
+          -o-transition: all .2s ease-in-out;
+          transition: all .2s ease-in-out; }
+          .create-topic-main-wrapper .form-content form .submit input[type=submit]:hover {
+            background-color: #de4267; }
+        .create-topic-main-wrapper .form-content form .submit a {
+          margin-top: 10px;
+          text-decoration: none;
+          background-color: #6e6e6e;
+          border: none;
+          color: #ffffff;
+          font-family: 'Open Sans', sans-serif;
+          font-size: 16px;
+          padding: 10px 30px;
+          cursor: pointer;
+          -webkit-transition: all .2s ease-in-out;
+          -o-transition: all .2s ease-in-out;
+          transition: all .2s ease-in-out; }
+          .create-topic-main-wrapper .form-content form .submit a:hover {
+            background-color: #333333; }
 
 footer {
   height: 450px;
