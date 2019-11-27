@@ -20,7 +20,7 @@ $reply = '';
 if(isset($_REQUEST["reply-body"])) { $reply = sanitize($_REQUEST["reply-body"]); }
 if(isset($_REQUEST["topic_com_id"])) { $comment_topic = sanitize($_REQUEST["topic_com_id"]); }
 
-if(!$_SESSION['user_id'] == 0)
+if(!$_SESSION['user_id'] || $_SESSION['user_id'] == 0)
 {
     echo '
         <main>

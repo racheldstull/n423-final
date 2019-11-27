@@ -1,6 +1,6 @@
 <?php
 
-// create page title value
+// create page title value and set uri
 $uri = "";
 $page_title = "Login";
 
@@ -8,6 +8,7 @@ $page_title = "Login";
 require_once ('includes/connect.php');
 require_once ('includes/head.php');
 
+// draw page
 ?>
 
 <main>
@@ -40,6 +41,7 @@ require_once ('includes/head.php');
 
 <?php
 
+// include footer
 require_once ('includes/footer.php');
 
 ?>

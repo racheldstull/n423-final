@@ -16,7 +16,7 @@ $sql = "SELECT
         FROM
             categories";
 
-// retrieve results
+// retrieve and set results to var
 $result = mysqli_query($link, $sql);
 
 // draw page
@@ -61,14 +61,14 @@ $result = mysqli_query($link, $sql);
                     // if there is an issue with db query
                     if(!$result)
                     {
-                        echo 'The category could not be displayed, please try again later.';
+                        echo '<p class="err">The category could not be displayed, please try again later.</p>';
                     }
                     else
                     {
                         // if category does not exist
                         if(mysqli_num_rows($result) == 0)
                         {
-                            echo 'This category does not exist.';
+                            echo '<p class="err">The category does not exist.</p>';
                         }
                         else
                         {
@@ -103,14 +103,14 @@ $result = mysqli_query($link, $sql);
                             // if there is an issue with the db query
                             if(!$result)
                             {
-                                echo 'The topics could not be displayed, please try again later.';
+                                echo '<p class="err">The topics could not be displayed, please try again later.</p>';
                             }
                             else
                             {
                                 // if there are no topics within the chosen category
                                 if(mysqli_num_rows($result) == 0)
                                 {
-                                    echo 'There are no topics in this category yet.';
+                                    echo '<p class="err">There are no topics in this category yet.</p>';
                                 }
                                 else
                                 {
@@ -158,6 +158,7 @@ $result = mysqli_query($link, $sql);
 
 <?php
 
+// include footer
 require_once ('includes/footer.php');
 
 ?>

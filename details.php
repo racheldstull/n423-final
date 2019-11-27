@@ -1,6 +1,6 @@
 <?php
 
-// create page title value
+// create page title value and set uri
 $uri = "";
 $page_title = "Details";
 
@@ -14,8 +14,11 @@ if (!filter_has_var(INPUT_GET, 'id')) {
     require_once ('includes/footer.php');
     exit();
 }
+
+// get and sanitize id
 $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
 
+// query topic and user info from db
 $sql = "SELECT
             topic_id,
             topic_by,
@@ -33,27 +36,32 @@ $sql = "SELECT
         WHERE
             topics.topic_id = " . addslashes($_GET['id']);
 
+// retrieve and set results to var
 $result = mysqli_query($link, $sql);
 
+// draw page
 ?>
 
 <main>
     <div class="topic-details-main-wrapper">
         <?php
 
+        // if there is an issue with db query
         if(!$result)
         {
             echo '<p class="err">The topic could not be displayed, please try again later.</p>';
         }
         else
         {
+            // if topic does not exist
             if(mysqli_num_rows($result) == 0)
             {
                 echo '<p class="err">This topic does not exist.</p>';
             }
             else
             {
-                //do a query for the topics
+                // if topic exists:
+                // do a query for the topics
                 $sql = "SELECT  
                             topic_id,
                             topic_subject,
@@ -63,7 +71,7 @@ $result = mysqli_query($link, $sql);
                             topic_by,
                             user_id,
                             user_name
-                         FROM
+                        FROM
                             topics
                         LEFT JOIN
                             users
@@ -72,11 +80,14 @@ $result = mysqli_query($link, $sql);
                         WHERE
                             topic_id = " . addslashes($_GET['id']);
 
+                // retrieve and set results to var
                 $result = mysqli_query($link, $sql);
 
+                // count number of comments in topic
                 $sql = "SELECT COUNT comment_topic FROM comments WHERE " . addslashes($_GET['id']);
                 $count = mysqli_query($link, $sql);
 
+                // if there is an issue with the db query
                 if(!$result)
                 {
                     echo '<p class="err">The topic could not be displayed, please try again later.</p>';
@@ -127,19 +138,21 @@ $result = mysqli_query($link, $sql);
             }
         }
 
+        // if there is an issue with the db query
         if(!$result)
         {
-            echo '<p class="err">The category could not be displayed, please try again later.</p>';
+            echo '<p class="err">The topic could not be displayed, please try again later.</p>';
         }
         else
         {
             if(mysqli_num_rows($result) == 0)
             {
-                echo '<p class="err">This category does not exist.</p>';
+                echo '<p class="err">This topic does not exist.</p>';
             }
             else
             {
-                //do a query for the topics
+                // if category exists:
+                // do a query for the comments
                 $sql = "SELECT  
                             comment_id,
                             comment_topic,
@@ -159,8 +172,10 @@ $result = mysqli_query($link, $sql);
                         ORDER BY
                             comments.comment_date DESC";
 
+                // retrieve and set results to var
                 $result = mysqli_query($link, $sql);
 
+                // if there is an issue with the db query
                 if(!$result)
                 {
                     echo '<p class="err">The comments could not be displayed, please try again later.</p>';
@@ -203,6 +218,7 @@ $result = mysqli_query($link, $sql);
 
 <?php
 
+// include footer
 require_once ('includes/footer.php');
 
 ?>
