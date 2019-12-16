@@ -30,7 +30,7 @@ function sanitize($item){
                 </div>
 
                 <div class="form-group">
-                    <textarea name="content" id="content" cols="80" rows="6" placeholder="Your text here..."></textarea>
+                    <textarea name="content" id="content" cols="80" rows="6" placeholder="Your text here..." required></textarea>
                 </div>
 
                 <div class="cat-select">

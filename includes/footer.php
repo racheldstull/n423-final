@@ -12,30 +12,30 @@
         </div>
         <div class="col">
             <h1>Momentum</h1>
-            <a href="#">About Us</a>
-            <a href="#">Our Mission</a>
-            <a href="#">Website Feedback</a>
+            <a href="<?php echo $uri ?>about.php">About Us</a>
+            <a href="<?php echo $uri ?>mission.php">Our Mission</a>
+            <a href="<?php echo $uri ?>feedback.php">Website Feedback</a>
         </div>
         <div class="col">
             <h1>Navigation</h1>
-            <a href="#">Home</a>
-            <a href="#">Learn</a>
-            <a href="#">Community</a>
-            <a href="#">Events</a>
-            <a href="#">Meetings</a>
-            <a href="#">MyAccount</a>
-            <a href="#">MyMomentum</a>
-            <a href="#">Sitemap</a>
+            <a href="<?php echo $uri ?>index.php">Home</a>
+            <a href="<?php echo $uri ?>learn.php">Learn</a>
+            <a href="<?php echo $uri ?>community.php">Forum</a>
+            <a href="<?php echo $uri ?>events.php">Events</a>
+            <a href="<?php echo $uri ?>meetings.php">Meetings</a>
+            <a href="<?php echo $uri ?>profile.php">MyAccount</a>
+            <a href="<?php echo $uri ?>momentum.php">MyMomentum</a>
+            <a href="<?php echo $uri ?>sitemap.php">Sitemap</a>
         </div>
         <div class="col">
             <h1>Legal</h1>
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms of Use</a>
+            <a href="<?php echo $uri ?>privacy.php">Privacy Policy</a>
+            <a href="<?php echo $uri ?>terms.php">Terms of Use</a>
         </div>
         <div class="col">
             <h1>Contact</h1>
-            <a href="#">Contact Us</a>
-            <a href="#">Press and Media</a>
+            <a href="<?php echo $uri ?>contact.php">Contact Us</a>
+            <a href="<?php echo $uri ?>press.php">Press and Media</a>
         </div>
     </div>
     <div class="footer-bottom">

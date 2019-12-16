@@ -63,6 +63,16 @@
       z-index: -99;
       opacity: 40%;
     }
+
+    .edit-bar {
+      text-align: right;
+      margin-right: 200px;
+
+      a {
+        color: $red;
+        padding-left: 8px;
+      }
+    }
   }
 
   .topic-details-body {
@@ -152,6 +162,7 @@
         opacity: 40%;
       }
     }
+
     .comments {
 
       .comment {

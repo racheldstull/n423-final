@@ -39,6 +39,9 @@ $sql = "SELECT
 // retrieve and set results to var
 $result = mysqli_query($link, $sql);
 
+$delete_btn = "";
+$edit_btn = "";
+
 // draw page
 ?>
 
@@ -84,8 +87,11 @@ $result = mysqli_query($link, $sql);
                 $result = mysqli_query($link, $sql);
 
                 // count number of comments in topic
-                $sql = "SELECT COUNT comment_topic FROM comments WHERE " . addslashes($_GET['id']);
+                $sql = "SELECT * 
+                        FROM comments 
+                        WHERE comment_topic = ". addslashes($_GET['id']);
                 $count = mysqli_query($link, $sql);
+                $count = mysqli_num_rows($count);
 
                 // if there is an issue with the db query
                 if(!$result)
@@ -95,6 +101,18 @@ $result = mysqli_query($link, $sql);
                 else
                 {
                         $row = mysqli_fetch_array($result, MYSQLI_BOTH);
+                        if($_SESSION["user_id"] == $row["user_id"]){
+                            $edit_btn = '<a href="details_edit.php">Edit Topic</a>';
+                        } else {
+                            $edit_btn = null;
+                        }
+
+                        if($_SESSION["user_id"] == $row["user_id"] || $_SESSION["user_id"] == 4){
+                            $delete_btn = '<a href="details_delete.php">Delete Topic</a>';
+                        } else {
+                            $delete_btn = null;
+                        }
+
                         echo '
                                 <div class="topic-details-sub-nav">
                                         <div class="sub-nav-top">
@@ -109,6 +127,7 @@ $result = mysqli_query($link, $sql);
                                             </div>
                                         </div>
                                         <hr>
+                                        <div class="edit-bar">'. $edit_btn . $delete_btn .'</div>
                                     </div>
                                     <div class="topic-details-body">
                                         <div class="details-expanded">
@@ -117,7 +136,7 @@ $result = mysqli_query($link, $sql);
                                                 <h4>'. $row["topic_date"] .'</h4>
                                             </div>
                                             <div class="topic-text">
-                                                <p>'. $row["topic_text"] .'</p>
+                                                <p>'. nl2br($row["topic_text"]) .'</p>
                                             </div>
                                         </div>
                                     </div>
@@ -200,7 +219,7 @@ $result = mysqli_query($link, $sql);
                                                     <h4>'. $pub .'</h4>
                                                 </div>
                                                 <div class="comment-body">
-                                                    <p>'. $row["comment_content"] .'</p>
+                                                    <p>'. nl2br($row["comment_content"]) .'</p>
                                                 </div>
                                                 <hr>
                                             </div>

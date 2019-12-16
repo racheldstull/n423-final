@@ -1,39 +1,3 @@
-<?php
-
-// create page title value and set uri
-$uri = "";
-$page_title = "Community";
-
-// create requires for the header and database
-require_once ('includes/connect.php');
-require_once ('includes/head.php');
-
-function sanitize($item){
-    global $link;  //to use $link within the scope of this function, you must use the keyword "global"
-    $item = html_entity_decode($item);
-    $item = trim($item);
-    $item = stripslashes($item);
-    $item = strip_tags($item);
-    $item = mysqli_real_escape_string( $link, $item );
-    return $item;
-}
-
-// query category id, name, and description from db
-$sql = "SELECT
-            cat_id,
-            cat_name,
-            cat_description
-        FROM
-            categories
-        WHERE
-            cat_id = " . addslashes($_GET['id']);
-
-// retrieve and set results to var
-$result = mysqli_query($link, $sql);
-
-// draw page
-?>
-
 <main>
     <div class="community-main-wrapper">
         <div class="community-sub-nav">
@@ -107,12 +71,10 @@ $result = mysqli_query($link, $sql);
                                         categories
                                     ON  
                                         categories.cat_id = topics.topic_cat
-                                    WHERE
-                                        topic_cat = " . addslashes($_GET['id']) . "
                                     ORDER BY
                                         topics.topic_date DESC";
 
-                            // retrieve and set results to var
+                            // retrieve results
                             $result = mysqli_query($link, $sql);
 
                             // if there is an issue with the db query
@@ -156,8 +118,16 @@ $result = mysqli_query($link, $sql);
                                         } else {
                                             $plural = "ies";
 
-                                            $activity = "# min ago";
+//                                            $activity = $interval->days . " days";
                                         }
+
+//                                        $date1 = new DateTime("2007-03-24");
+//                                        $date2 = new DateTime("2009-06-26");
+//                                        $interval = $date1->diff($date2);
+//                                        echo "difference " . $interval->y . " years, " . $interval->m." months, ".$interval->d." days ";
+//
+//                                        // shows the total amount of days (not divided into years, months and days like above)
+//                                        echo "difference " . $interval->days . " days ";
 
 
                                         // echo results to page
@@ -193,11 +163,3 @@ $result = mysqli_query($link, $sql);
         </div>
     </div>
 </main>
-
-<?php
-
-require_once ('includes/footer.php');
-
-?>
-
-

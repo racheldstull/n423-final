@@ -10,8 +10,6 @@ if (!isset($_SESSION["user_level"])){
 
 $user_level = $_SESSION["user_level"];
 
-echo '<script>console.log('. $user_level .');</script>';
-
 ?>
 
 <!DOCTYPE html>
@@ -43,11 +41,11 @@ echo '<script>console.log('. $user_level .');</script>';
     <div class="nav-right">
         <div class="nav-links">
             <a href="<?php echo $uri ?>index.php">Home</a>
-            <a class="disabled" href="#">Learn</a>
-            <a href="<?php echo $uri ?>community.php">Community</a>
-            <a class="disabled" href="#">Events</a>
-            <a class="disabled" href="#">Meetings</a>
-            <a class="disabled" href="#">MyMomentum</a>
+            <a href="<?php echo $uri ?>learn.php">Learn</a>
+            <a href="<?php echo $uri ?>community.php">Forum</a>
+            <a href="<?php echo $uri ?>events.php">Events</a>
+            <a href="<?php echo $uri ?>meetings.php">Meetings</a>
+            <a href="<?php echo $uri ?>momentum.php">MyMomentum</a>
 
             <?php
             if($_SESSION["user_level"] > 0){ echo '
@@ -61,7 +59,7 @@ echo '<script>console.log('. $user_level .');</script>';
 
             ?>
 
-            <a href="#"><i class="fas fa-user-circle"></i></a>
+<!--            <a href="#"><i class="fas fa-user-circle"></i></a>-->
         </div>
     </div>
 </nav>
