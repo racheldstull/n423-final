@@ -189,7 +189,7 @@ $edit_btn = "";
                         WHERE
                             comment_topic = " . addslashes($_GET['id']) . "
                         ORDER BY
-                            comments.comment_date DESC";
+                            comments.comment_date ASC";
 
                 // retrieve and set results to var
                 $result = mysqli_query($link, $sql);

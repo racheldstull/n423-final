@@ -118,7 +118,7 @@
                                         } else {
                                             $plural = "ies";
 
-//                                            $activity = $interval->days . " days";
+                                            $activity = "# min ago";
                                         }
 
 //                                        $date1 = new DateTime("2007-03-24");

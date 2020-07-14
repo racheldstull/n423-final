@@ -97,4 +97,17 @@
         z-index: -99;
       }
     }
+
+    .wrapper {
+      width: 100%;
+      margin: 500px;
+      font-family: 'Open Sans', sans-serif;
+      background-color: #118AB2;
+
+      p {
+        margin-top: 500px;
+        font-size: 30px;
+        padding: 300px;
+      }
+    }
   }

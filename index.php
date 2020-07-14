@@ -16,7 +16,7 @@ require_once ('includes/head.php');
             <h1>Empowering Your <br> Journey to <span>Recovery</span>.</h1>
             <div class="line"></div>
             <p>Recovery is possible. And you don't have to do it alone.</p>
-            <p>Begin your journey or get a boost of help along the way.</p>
+            <p>Begin your journey or get a boost of help along the way. It begins with a desire for change and the belief that you can do it.</p>
         </div>
     </div>
     <div class="home-main-sections">

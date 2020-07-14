@@ -12,17 +12,8 @@ require_once ('includes/head.php');
 
 <main>
     <div class="meetings-main-wrapper">
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <p>words</p>
+        <br><br><br><br><br><br><br><br><br><br><br><br>
+        <p>Visitors, regardless of login status, are able to view live meetings being hosted through YouTube. Visitors care able to watch the live steam and comment live.</p>
     </div>
 </main>
 

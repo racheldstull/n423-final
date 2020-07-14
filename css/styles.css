@@ -143,15 +143,13 @@ nav {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
-  flex-direction: column;
-  background-color: #06D6A0; }
+  flex-direction: column; }
   .learn-main-wrapper .wrapper {
     width: 100%;
-    font-family: 'Open Sans', sans-serif;
-    background-color: #118AB2; }
+    margin: 200px;
+    font-family: 'Open Sans', sans-serif; }
     .learn-main-wrapper .wrapper p {
-      margin-top: 500px;
-      font-size: 30px; }
+      font-size: 15px; }
 
 .community-main-wrapper, .edu-main-wrapper {
   min-height: 100vh;
@@ -428,7 +426,8 @@ nav {
           font-size: 18px;
           margin-right: 20px; }
       .topic-details-main-wrapper .topic-details-body .details-expanded topic-text p {
-        font-size: 18px; }
+        font-size: 18px;
+        line-height: 5px; }
   .topic-details-main-wrapper .details-reply {
     width: 100vw;
     margin-top: 40px; }
@@ -582,6 +581,15 @@ nav {
     .events-main-wrapper .events-sub-nav hr {
       margin: 10px 100px;
       z-index: -99; }
+  .events-main-wrapper .wrapper {
+    width: 100%;
+    margin: 500px;
+    font-family: 'Open Sans', sans-serif;
+    background-color: #118AB2; }
+    .events-main-wrapper .wrapper p {
+      margin-top: 500px;
+      font-size: 30px;
+      padding: 300px; }
 
 .meetings-main-wrapper {
   min-height: 100vh;
@@ -660,6 +668,15 @@ nav {
     .meetings-main-wrapper .meetings-sub-nav hr {
       margin: 10px 100px;
       z-index: -99; }
+  .meetings-main-wrapper .wrapper {
+    width: 100%;
+    margin: 500px;
+    font-family: 'Open Sans', sans-serif;
+    background-color: #118AB2; }
+    .meetings-main-wrapper .wrapper p {
+      margin-top: 500px;
+      padding: 300px;
+      font-size: 30px; }
 
 .login-main-wrapper {
   width: 100%;
